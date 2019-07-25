@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>chuyển đổi tiền tệ</title>
+
+</head>
+
+<style type="text/css" media="screen">
+th {
+	padding-left: 200px;
+}
+td {
+	padding-left: 200px;
+}
+	
+</style>
+
+<body>
+
+<table class="">
+<tr>
+  <th >Amount</th>
+  <th >From Currency</th>
+  <th >To Currency</th>
+  <th></th>
+</tr>
+<tr>
+  <td><input type="text" id="amount"></td>
+  <td>
+  	<select>
+	  	<option value="VietNam">VietNam</option>	  
+	  	<option value="USA" >USA</option>
+	</select>
+  </td>
+  <td>
+  	<select>
+  		<option value="VND" >VND</option>
+	  	<option value="USD">USD</option>	  
+	</select>
+  </td>
+  <td >
+  	<button id="result" type="button" onclick="myfunction()"> Convert</button>
+
+  						
+  </td>
+</tr>
+</table>
+
+<p id="KQ"></p>
+
+<script type="text/javascript">
+function myfunction() {
+	var input=parseFloat(document.getElementById('amount').value);	
+	var USD = input;
+	var VND = USD * 23000;		 
+	document.getElementById('KQ').innerHTML = VND;
+	
+}
+
+
+	
+	
+	
+</script>
+</body>
+</html>

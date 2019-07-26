@@ -25,15 +25,15 @@ td {
   <th></th>
 </tr>
 <tr>
-  <td><input type="text" id="amount"></td>
+  <td><input type="text" id="money"></td>
   <td>
-  	<select>
-	  	<option value="VietNam">VietNam</option>	  
-	  	<option value="USA" selected>USA</option>
+  	<select name="country" id="from">
+	  	<option value="VND">VietNam</option>	  
+	  	<option value="USD" selected>USA</option>
 	</select>
   </td>
   <td>
-  	<select>
+  	<select name="contry" id="to">
   		<option value="VND"selected >VND</option>
 	  	<option value="USD">USD</option>	  
 	</select>
@@ -50,13 +50,19 @@ td {
 
 <script type="text/javascript">
 function myfunction() {
-	var input=parseFloat(document.getElementById('amount').value);	
-	var USD = input;
-	var VND = USD * 23000;		 
-	document.getElementById('KQ').innerHTML = VND;
-	
-}
+	var input=parseFloat(document.getElementById('money').value);	
+	var from = document.getElementById('from').value;
+	var to = document.getElementById('to').value;
 
+
+	if (from == "VND" && to == "USD" ) {
+		document.getElementById('KQ').innerHTML = input / 23000;
+	}
+	if (from == "USD" && to == "VND") {
+		document.getElementById('KQ').innerHTML = input * 23000;
+	} 
+		
+}
 
 	
 	
